@@ -1,0 +1,6 @@
+<h1>Basket of user: <%= @basket.user.email %></h1>
+<h3>Items of basket: </h3>
+<% @basket.items.each do |item| %>
+  <%= link_to item.name, item_path(item.id) %>
+  <br>
+<% end %>

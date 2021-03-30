@@ -20,6 +20,9 @@
         <%= link_to "sign up", new_user_registration_path %>
       <% end %>
     </div>
+    <%= link_to "Items", items_path if signed_in? %>
+    <%= link_to "my basket", basket_path(current_user.basket.id) if signed_in? %>
+    <br>
     <%= yield %>
   </body>
 </html>

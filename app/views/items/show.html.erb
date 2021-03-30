@@ -1,0 +1,8 @@
+<h1>Item <%= @item.name %></h1>
+<h5><%= @item.description %></h5>
+<br>
+<% if admin? %>
+  <%= link_to "edit", edit_item_path(@item.id) %>
+  <%= link_to "delete", item_path(@item.id), method: :delete %>
+<% end %>
+<%= link_to "add to basket", add_item_to_basket_item_path(@item.id), method: :post %>
